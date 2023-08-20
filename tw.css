@@ -1,0 +1,83 @@
+.card__row {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.card__item {
+    border-radius: 5px;
+    box-shadow: 0 5px 4px var(--clr-light);
+    flex-wrap: wrap;
+    font-size: 14px;
+    gap: 1rem;
+    padding: 1rem 1rem 0.5rem;
+    line-height: 2.2;
+}
+
+.card__item-status {
+    font-size: 0.8rem;
+    letter-spacing: .5px;
+    align-self: end;
+    margin-right: 1.5rem;
+}
+
+.status-section {
+    justify-content: space-between;
+    gap: 0.625rem;
+}
+
+.status-section .card__item-status {
+    font-size: 1.1rem;
+    margin-right: 1.5rem;
+}
+
+.green {
+    color: var(--clr-green);
+}
+
+.orange {
+    color: var(--clr-orange);
+}
+
+.red {
+    color: var(--clr-red);
+}
+
+.card__item-orange {
+    border-left: 4px solid var(--clr-orange);
+}
+
+.card__item-green {
+    border-left: 4px solid var(--clr-green);
+}
+
+.card__item-red {
+    border-left: 4px solid var(--clr-red);
+}
+
+/* .card__icon {
+    width: 1.875rem;
+} */
+
+
+.card__item-values {
+    display: inline-block;
+    font-size: small;
+    width: 9rem;
+    font-weight: 500;
+}
+
+@media screen and (min-width: 768px) {
+    .card__item {
+        height: 8.063rem;
+    }
+
+    .card__item-status {
+        font-size: 1.125rem;
+    }
+
+    .card__icon-container {
+        flex-direction: inherit;
+    }
+}

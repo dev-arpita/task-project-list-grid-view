@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&family=Open+Sans:wght@300;700&display=swap"
+            rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        
+                        boxShadow: {
+                            'options': '0 0 5px #9C9FA0',
+                            'card': '0 5px 4px #9C9FA0'
+                        },
+                        borderWidth: {
+                            'header': '3px'
+                        },
+                        borderColor: {
+                            'headercol': '#F5F5F5'
+                        },
+
+                        fontFamily: {
+                            'site': ["Open Sans", 'sans-serif'],
+                            'search': ["Inter", 'sans-serif']
+                        },
+                        colors: {
+                            'site-primary': '#37455F',
+                            'site-secondary': '#F5F5F5',
+                            'active': '#2F96AD',
+                            'light': '#9C9FA0',
+                            'green': '#0A8A3D',
+                            'card-header': ' rgba(47, 150, 173, 0.1)',
+                            'red': '#F21313',
+                            'orange': '#CD7930',
+                            'gray': '#484545'
+                        },
+                        maxWidth: {
+                            '1440': '1440px',
+                        },
+
+                    }
+                }
+            }
+        </script>
+    </head>
+
+    <body class="text-xs h-screen font-site leading-normal md:text-base">
+        <section class="grid md:max-w-1440">
+            <!-- Sidebar -->
+            <aside class="hidden md:block bg-site-primary overflow-auto text-white h-screen p-4 fixed w-1/5">
+                <img src="/assets/Group1.png" alt="" class="w-5 md:mb-4" />
+                <nav class="flex flex-col p-4 pl-0 pr-0  justify-between md:h-full md:gap-5" aria-label="nav">
+                    <ul class="flex flex-col list-none pl-0 md:gap-4">
+                        <li>
+                            <a href="#" class="flex no-underline text-inherit md:items-center md:gap-2.5">
+                                <img src="./assets/dashboard.png" class=" w-5" />
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex no-underline text-inherit md:items-center md:gap-2.5">
+                                <img src="./assets/parcel1.png" class=" w-5" />
+                                <span>Supplier Onboarding</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex no-underline text-inherit md:items-center md:gap-2.5">
+                                <img src="./assets/data-source1.png" class=" w-5" />
+                                <span>Sourcing</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex no-underline text-inherit md:items-center md:gap-2.5">
+                                <img src="./assets/contract2.png" class=" w-5" />
+                                <span>Contact</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex no-underline text-inherit md:items-center md:gap-2.5">
+                                <img src="./assets/cart2.png" class=" w-5" />
+                                <span>Purchasing</span>
+                                <img src="/assets/Vector3-Stroke.png" alt="" class=" w-5 md:w-3 md:ml-auto">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex no-underline text-inherit md:items-center md:gap-2.5">
+                                <img src="./assets/Vector.png" class=" w-5" />
+                                <span>Invoice Management</span>
+                                <img src="/assets/Vector3-Stroke.png" alt="" class="w-5 md:w-3 md:ml-auto">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex no-underline text-inherit md:items-center md:gap-2.5">
+                                <img src="./assets/create2.png" class=" w-5" />
+                                <span>Create Invoice</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex no-underline text-inherit md:items-center md:gap-2.5">
+                                <img src="./assets/project-management2.png" class=" w-5" />
+                                <span>Manage Invoice</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="flex flex-col list-none pl-0 pb-8 md:gap-4 ">
+                        <li>
+                            <a href="#" class="flex no-underline text-inherit md:items-center md:gap-2.5">
+                                <img src="./assets/MasterData.png" class="w-5" />
+                                <span>Reports</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex no-underline text-inherit md:items-center md:gap-2.5">
+                                <img src="./assets/icons8-knowledge-642.png" class="w-5" />
+                                <span>Quality Report</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex no-underline text-inherit md:items-center md:gap-2.5">
+                                <img src="./assets/Group3542.png" class="w-5" />
+                                <span>Help Desk</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex no-underline text-inherit md:items-center md:gap-2.5">
+                                <img src="./assets/MasterData-1.png" class="w-5" />
+                                <span>Gate Entry</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+            <!-- Main Section -->
+            <section class="flex flex-col md:px-4 ml-auto md:w-10/12">
+                <div class="fixed top-0 right-0 bg-white z-10 md:left-60 md:ml-11 shadow-lg pb-2">
+                    <!-- header -->
+                    <header class="flex justify-between py-2 px-4 border-b-header border-headercol border-solid">
+                        <!-- menu button -->
+                        <div class="inline-flex self-center bg-site-primary rounded-full px-2.5 py-3  md:opacity-0">
+                            <img src="/assets/Group1.png" alt="" class="w-4">
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div>
+                                <a href="#" class="list-item__header no-underline text-inherit">
+                                    <img src="/assets/settings4.png" class="w-7" />
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#" class="list-item__header no-underline text-inherit">
+                                    <img src="/assets/Group.png" class="w-7" />
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#" class="list-item__header no-underline text-inherit">
+                                    <img src="/assets/Group3240.png" class="w-7" />
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#" class="list-item__header no-underline text-inherit">
+                                    <img src="/assets/Group3541.png" class="w-7" />
+                                </a>
+                            </div>
+                        </div>
+                    </header>
+                    <!-- search-field -->
+                    <section class="flex flex-col pt-4 m-4 gap-2 md:flex-row">
+                        <input
+                            class="border border-solid border-active outline-0 rounded-3xl py-2 px-4 max-w-sm w-80 font-search placeholder:italic placeholder:text-active"
+                            type="text" placeholder="Search here" />
+                        <div class="flex p-1.5 text-gray gap-2">
+                            <div class="flex p-1 gap-1 rounded-md shadow-options">
+                                <img class="pl-1 self-center h-3.5" src="/assets/sorting.png" alt="">
+                                <select class="border-0 text-inherit">
+                                    <option>
+                                        Sort by
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="flex p-1 gap-1.5 rounded-md shadow-options">
+                                <img class="pl-1 self-center h-3.5" src="/assets/Group3657.png" alt="">
+                                <select class="border-0 text-inherit">
+                                    <option>
+                                        Filter
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- breadcrumb -->
+                    <section class="mt-0 text-sm px-4 py-2 ">
+                        <span>Home&nbsp;</span>
+                        <span>&gt;</span>
+                        <span>&nbsp; Invoice Management &nbsp;</span>
+                        <span>&gt;</span>
+                        <span class="text-active">&nbsp;Create Invoice</span>
+                    </section>
+                    <!-- filter -->
+                    <section class="flex justify-between px-4 py-3 flex-wrap">
+                        <div class="flex gap-4">
+                            <div class="border-b-2 pb-1 border-solid border-active">
+                                <span class="text-active">All</span>
+                                <span
+                                    class="py-0.5 md:py-1 px-2 md:px-2.5 text-sm rounded-full bg-active text-site-secondary">9</span>
+                            </div>
+                            <div class="text-light pb-1">
+                                <span>Approved</span>
+                                <span
+                                    class="md:py-1 py-0.5 px-2 md:px-2.5 text-sm rounded-full bg-site-secondary">8</span>
+                            </div>
+                            <div class="text-light pb-1">
+                                <span>In Process</span>
+                                <span
+                                    class="md:py-1 py-0.5 px-2 md:px-2.5 text-sm rounded-full bg-site-secondary">6</span>
+                            </div>
+                            <div class="text-light pb-1">
+                                <span>Rejected</span>
+                                <span
+                                    class="md:py-1 py-0.5 px-2 md:px-2.5 text-sm rounded-full bg-site-secondary">6</span>
+                            </div>
+                        </div>
+                        <!-- view -->
+                        <div class="flex justify-end w-full mt-2 gap-4 md:mt-0 md:w-1/6">
+                            <div class="flex gap-1.5 items-center bg-site-secondary py-1.5 px-4 shadow-lg">
+                                <img class="w-4 h-4 self-center " src="/assets/list1.png" alt="">
+                                <span class="hidden md:block pr-4 ">List</span>
+                            </div>
+                            <div class="flex gap-1.5 items-center bg-active py-1.5 px-4 shadow-lg">
+                                <img class="w-4 h-4 self-center" src="/assets/grid1.png" alt="">
+                                <span class="hidden md:block pr-4 text-white">Grid</span>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- view -->
+                    <section class="flex justify-between text-light items-center px-4 py-2 flex-wrap gap-4">
+                        <div>Showing 5-10 of 54 result</div>
+                        <div class="flex gap-1">
+                            <p class="m-0">Result per page</p>
+                            <select class="border border-solid border-light text-inherit">
+                                <option value="0">5</option>
+                            </select>
+                        </div>
+                    </section>
+                </div>
+                <!-- card -->
+                <main class="w-screen mx-auto mt-96 md:pl-10 md:mt-80 font-search">
+                    <div class="grid grid-cols-1 gap-8 mb-8">
+                        <div class="flex flex-col flex-wrap gap-4 text-sm md:h-32 shadow-card p-4 pb-2 leading-8 border-l-4 rounded border-orange border-solid">
+                            <div class="">
+                                <p class="">
+                                    <span class="font-medium card__item-values">
+                                        PO Number
+                                    </span>
+                                    <span class="font-light">: 5001</span>
+                                </p>
+                                <p>
+                                    <span class="font-medium card__item-values">
+                                        Vendor Name
+                                    </span>
+                                    <span class="font-light">: Voltas</span>
+                                </p>
+                                <p>
+                                    <span class="font-medium card__item-values">Company Code </span>
+                                    <span class="font-light">: 5001</span>
+                                </p>
+                            </div>
+                            <div class="">
+                                <p>
+                                    <span class="font-medium card__item-values">PO Date</span>
+                                    <span class="font-light">
+                                        : 26/06/2022
+                                    </span>
+                                </p>
+                                <p>
+                                    <span class="font-medium card__item-values">Validity</span>
+                                    <span class="font-light">
+                                        : 26/06/2022
+                                    </span>
+                                </p>
+                                <p>
+                                    <span class="font-medium card__item-values">
+                                        Ordered Value</span>
+                                    <span class="font-light">
+                                        : 1000
+                                    </span>
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="font-medium card__item-values">Delivered Value</span>
+                                    <span class="font-light">
+                                        : 1000
+                                    </span>
+                                </p>
+                
+                                <p>
+                                    <span class="font-medium card__item-values">
+                                        Invoiced Value</span>
+                                    <span class="font-light">
+                                        : 1000
+                                    </span>
+                                </p>
+                                <p class="font-medium">
+                                    Payment Term
+                                </p>
+                
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="font-medium card__item-values">Pending Amount-INR </span>
+                                    <span class="font-light">
+                                        : 1000
+                                    </span>
+                                </p>
+                                <p class="font-medium">
+                                    Down Payment
+                                </p>
+                                <div class="flex justify-between status-section">
+                                    <p class="font-medium">Status</p>
+                                    <div class="text-orange text-lg">In Progress</div>
+                                </div>
+                            </div>
+                            <div class="flex md:flex-col gap-4 justify-end items-end  h-full p-2 ">
+                                <img src="/assets/id-card-2.png" alt="" class="w-6 max-w-full">
+                                <img src="/assets/map-3.png" alt="" class="w-6 max-w-full">
+                                <img src="/assets/email(2)-4.png" alt="" class="w-6">
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-col flex-wrap gap-4 text-sm md:h-32 shadow-card p-4 pb-2 leading-8 border-l-4 rounded border-green border-solid">
+                            <div>
+                                <p>
+                                    <span class="font-medium card__item-values">
+                                        PO Number
+                                    </span>
+                                    <span class="font-light">: 5001</span>
+                                </p>
+                                <p>
+                                    <span class="font-medium card__item-values">
+                                        Vendor Name
+                                    </span>
+                                    <span class="font-light">: Voltas</span>
+                                </p>
+                                <p>
+                                    <span class="font-medium card__item-values">Company Code </span>
+                                    <span class="font-light">: 5001</span>
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="font-medium card__item-values">PO Date</span>
+                                    <span class="font-light">
+                                        : 26/06/2022
+                                    </span>
+                                </p>
+                                <p>
+                                    <span class="font-medium card__item-values">Validity</span>
+                                    <span class="font-light">
+                                        : 26/06/2022
+                                    </span>
+                                </p>
+                                <p>
+                                    <span class="font-medium card__item-values">
+                                        Ordered Value</span>
+                                    <span class="font-light">
+                                        : 1000
+                                    </span>
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="font-medium card__item-values">Delivered Value</span>
+                                    <span class="font-light">
+                                        : 1000
+                                    </span>
+                                </p>
+                        
+                                <p>
+                                    <span class="font-medium card__item-values">
+                                        Invoiced Value</span>
+                                    <span class="font-light">
+                                        : 1000
+                                    </span>
+                                </p>
+                                <p class="font-medium">
+                                    Payment Term
+                                </p>
+                        
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="font-medium card__item-values">Pending Amount-INR </span>
+                                    <span class="font-light">
+                                        : 1000
+                                    </span>
+                                </p>
+                                <p class="font-medium">
+                                    Down Payment
+                                </p>
+                                <div class="flex justify-between status-section">
+                                    <p class="font-medium">Status</p>
+                                    <div class="text-green text-lg">Completed</div>
+                                </div>
+                            </div>
+                            <div class="flex md:flex-col gap-4 justify-end items-end h-full p-2">
+                                <img src="/assets/id-card-2.png" alt="" class="w-6">
+                                <img src="/assets/map-3.png" alt="" class="w-6">
+                                <img src="/assets/email(2)-4.png" alt="" class="w-6">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 gap-4 md:gap-8 mb-8">
+                        <div class="flex flex-col flex-wrap gap-4 text-sm md:h-32 shadow-card p-4 pb-2 leading-8 border-l-4 rounded border-red border-solid">
+                            <div>
+                                <p>
+                                    <span class="font-medium card__item-values">
+                                        PO Number
+                                    </span>
+                                    <span class="font-light">: 5001</span>
+                                </p>
+                                <p>
+                                    <span class="font-medium card__item-values">
+                                        Vendor Name
+                                    </span>
+                                    <span class="font-light">: Voltas</span>
+                                </p>
+                                <p>
+                                    <span class="font-medium card__item-values">Company Code </span>
+                                    <span class="font-light">: 5001</span>
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="font-medium card__item-values">PO Date</span>
+                                    <span class="font-light">
+                                        : 26/06/2022
+                                    </span>
+                                </p>
+                                <p>
+                                    <span class="font-medium card__item-values">Validity</span>
+                                    <span class="font-light">
+                                        : 26/06/2022
+                                    </span>
+                                </p>
+                                <p>
+                                    <span class="font-medium card__item-values">
+                                        Ordered Value</span>
+                                    <span class="font-light">
+                                        : 1000
+                                    </span>
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="font-medium card__item-values">Delivered Value</span>
+                                    <span class="font-light">
+                                        : 1000
+                                    </span>
+                                </p>
+                    
+                                <p>
+                                    <span class="font-medium card__item-values">
+                                        Invoiced Value</span>
+                                    <span class="font-light">
+                                        : 1000
+                                    </span>
+                                </p>
+                                <p class="font-medium">
+                                    Payment Term
+                                </p>
+                    
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="font-medium card__item-values">Pending Amount-INR </span>
+                                    <span class="font-light">
+                                        : 1000
+                                    </span>
+                                </p>
+                                <p class="font-medium">
+                                    Down Payment
+                                </p>
+                                <div class="flex justify-between status-section">
+                                    <p class="font-medium">Status</p>
+                                    <div class="text-red text-lg">Rejected</div>
+                                </div>
+                            </div>
+                            <div class="flex md:flex-col gap-4 justify-end items-end  h-full p-2 ">
+                                <img src="/assets/id-card-2.png" alt="" class="w-6 max-w-full">
+                                <img src="/assets/map-3.png" alt="" class="w-6 max-w-full">
+                                <img src="/assets/email(2)-4.png" alt="" class="w-6">
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-col flex-wrap gap-4 text-sm md:h-32 shadow-card p-4 pb-2 leading-8 border-l-4 rounded border-green border-solid">
+                            <div>
+                                <p>
+                                    <span class="font-medium card__item-values">
+                                        PO Number
+                                    </span>
+                                    <span class="font-light">: 5001</span>
+                                </p>
+                                <p>
+                                    <span class="font-medium card__item-values">
+                                        Vendor Name
+                                    </span>
+                                    <span class="font-light">: Voltas</span>
+                                </p>
+                                <p>
+                                    <span class="font-medium card__item-values">Company Code </span>
+                                    <span class="font-light">: 5001</span>
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="font-medium card__item-values">PO Date</span>
+                                    <span class="font-light">
+                                        : 26/06/2022
+                                    </span>
+                                </p>
+                                <p>
+                                    <span class="font-medium card__item-values">Validity</span>
+                                    <span class="font-light">
+                                        : 26/06/2022
+                                    </span>
+                                </p>
+                                <p>
+                                    <span class="font-medium card__item-values">
+                                        Ordered Value</span>
+                                    <span class="font-light">
+                                        : 1000
+                                    </span>
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="font-medium card__item-values">Delivered Value</span>
+                                    <span class="font-light">
+                                        : 1000
+                                    </span>
+                                </p>
+                    
+                                <p>
+                                    <span class="font-medium card__item-values">
+                                        Invoiced Value</span>
+                                    <span class="font-light">
+                                        : 1000
+                                    </span>
+                                </p>
+                                <p class="font-medium">
+                                    Payment Term
+                                </p>
+                    
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="font-medium card__item-values">Pending Amount-INR </span>
+                                    <span class="font-light">
+                                        : 1000
+                                    </span>
+                                </p>
+                                <p class="font-medium">
+                                    Down Payment
+                                </p>
+                                <div class="flex justify-between status-section">
+                                    <p class="font-medium">Status</p>
+                                    <div class="text-green text-lg">Completed</div>
+                                </div>
+                            </div>
+                            <div class="flex md:flex-col gap-4 justify-end items-end  h-full p-2 ">
+                                <img src="/assets/id-card-2.png" alt="" class="w-6 max-w-full">
+                                <img src="/assets/map-3.png" alt="" class="w-6 max-w-full">
+                                <img src="/assets/email(2)-4.png" alt="" class="w-6">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 gap-8 mb-6">
+                        <div
+                            class="flex flex-col flex-wrap gap-4 text-sm md:h-32 shadow-card p-4 pb-2 leading-8 border-l-4 rounded border-orange border-solid">
+                            <div>
+                                <p>
+                                    <span class="font-medium card__item-values">
+                                        PO Number
+                                    </span>
+                                    <span class="font-light">: 5001</span>
+                                </p>
+                                <p>
+                                    <span class="font-medium card__item-values">
+                                        Vendor Name
+                                    </span>
+                                    <span class="font-light">: Voltas</span>
+                                </p>
+                                <p>
+                                    <span class="font-medium card__item-values">Company Code </span>
+                                    <span class="font-light">: 5001</span>
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="font-medium card__item-values">PO Date</span>
+                                    <span class="font-light">
+                                        : 26/06/2022
+                                    </span>
+                                </p>
+                                <p>
+                                    <span class="font-medium card__item-values">Validity</span>
+                                    <span class="font-light">
+                                        : 26/06/2022
+                                    </span>
+                                </p>
+                                <p>
+                                    <span class="font-medium card__item-values">
+                                        Ordered Value</span>
+                                    <span class="font-light">
+                                        : 1000
+                                    </span>
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="font-medium card__item-values">Delivered Value</span>
+                                    <span class="font-light">
+                                        : 1000
+                                    </span>
+                                </p>
+                    
+                                <p>
+                                    <span class="font-medium card__item-values">
+                                        Invoiced Value</span>
+                                    <span class="font-light">
+                                        : 1000
+                                    </span>
+                                </p>
+                                <p class="font-medium">
+                                    Payment Term
+                                </p>
+                    
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="font-medium card__item-values">Pending Amount-INR </span>
+                                    <span class="font-light">
+                                        : 1000
+                                    </span>
+                                </p>
+                                <p class="font-medium">
+                                    Down Payment
+                                </p>
+                                <div class="flex justify-between status-section">
+                                    <p class="font-medium">Status</p>
+                                    <div class="text-orange text-lg">In Progress</div>
+                                </div>
+                            </div>
+                            <div class="flex md:flex-col gap-4 justify-end items-end  h-full p-2 ">
+                                <img src="/assets/id-card-2.png" alt="" class="w-6 max-w-full">
+                                <img src="/assets/map-3.png" alt="" class="w-6 max-w-full">
+                                <img src="/assets/email(2)-4.png" alt="" class="w-6">
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-col flex-wrap gap-4 text-sm md:h-32 shadow-card p-4 pb-2 leading-8 border-l-4 rounded border-green border-solid">
+                            <div>
+                                <p>
+                                    <span class="font-medium card__item-values">
+                                        PO Number
+                                    </span>
+                                    <span class="font-light">: 5001</span>
+                                </p>
+                                <p>
+                                    <span class="font-medium card__item-values">
+                                        Vendor Name
+                                    </span>
+                                    <span class="font-light">: Voltas</span>
+                                </p>
+                                <p>
+                                    <span class="font-medium card__item-values">Company Code </span>
+                                    <span class="font-light">: 5001</span>
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="font-medium card__item-values">PO Date</span>
+                                    <span class="font-light">
+                                        : 26/06/2022
+                                    </span>
+                                </p>
+                                <p>
+                                    <span class="font-medium card__item-values">Validity</span>
+                                    <span class="font-light">
+                                        : 26/06/2022
+                                    </span>
+                                </p>
+                                <p>
+                                    <span class="font-medium card__item-values">
+                                        Ordered Value</span>
+                                    <span class="font-light">
+                                        : 1000
+                                    </span>
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="font-medium card__item-values">Delivered Value</span>
+                                    <span class="font-light">
+                                        : 1000
+                                    </span>
+                                </p>
+                    
+                                <p>
+                                    <span class="font-medium card__item-values">
+                                        Invoiced Value</span>
+                                    <span class="font-light">
+                                        : 1000
+                                    </span>
+                                </p>
+                                <p class="font-medium">
+                                    Payment Term
+                                </p>
+                    
+                            </div>
+                            <div>
+                                <p>
+                                    <span class="font-medium card__item-values">Pending Amount-INR </span>
+                                    <span class="font-light">
+                                        : 1000
+                                    </span>
+                                </p>
+                                <p class="font-medium">
+                                    Down Payment
+                                </p>
+                                <div class="flex justify-between status-section">
+                                    <p class="font-medium">Status</p>
+                                    <div class="text-green text-lg">Completed</div>
+                                </div>
+                            </div>
+                            <div class="flex md:flex-col gap-4 justify-end items-end  h-full p-2 ">
+                                <img src="/assets/id-card-2.png" alt="" class="w-6 max-w-full">
+                                <img src="/assets/map-3.png" alt="" class="w-6 max-w-full">
+                                <img src="/assets/email(2)-4.png" alt="" class="w-6">
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </section>
+        </section>
+
+    </body>
+
+</html>
