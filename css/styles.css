@@ -332,15 +332,12 @@ select {
 
 .mode-list {
     background: #F5F5F5;
-    padding: 5px var(--ml-4);
-}
-
-.mode-grid {
-    background: var(--clr-highlighter);
+    color: #37455F;
     padding: 5px var(--ml-4);
 }
 
 .selected {
+    background: var(--clr-highlighter);
     color: var(--clr-white);
 }
 
