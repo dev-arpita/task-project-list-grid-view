@@ -435,6 +435,8 @@ select {
 }
 
 .card__item-values {
+    font-weight: 600;
+    color: #3e3c3c;
     display: inline-block;
     width: 8rem;
 }
